@@ -1,0 +1,260 @@
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: #ecf2f8;
+  font-size: 0.8125rem;
+}
+
+.card {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card__body {
+  width: 20.625rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+@media (min-width: 40em) {
+  .card__body {
+    width: 30rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .card__body {
+    width: 45.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: visible;
+    z-index: 0;
+  }
+}
+
+.card__image {
+  height: 12.5rem;
+  background-image: url("../images/drawers.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+@media (min-width: 64em) {
+  .card__image {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    height: 17.5rem;
+    border-radius: 0.625rem 0 0 0.625rem;
+  }
+}
+
+.card__text {
+  background-color: white;
+  padding: 2.5rem 1.5rem 0 1.5rem;
+}
+
+@media (min-width: 64em) {
+  .card__text {
+    -webkit-box-flex: 3;
+        -ms-flex: 3;
+            flex: 3;
+    border-radius: 0 0.625rem 0.625rem 0;
+  }
+}
+
+.card__title {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+  color: #48556a;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 64em) {
+  .card__title {
+    font-size: 1.40rem;
+  }
+}
+
+.card__description {
+  font-size: 0.90625rem;
+  line-height: 1.25rem;
+  color: #6d7f97;
+  margin-bottom: 1.5175rem;
+}
+
+.card__information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.375rem 0;
+  position: relative;
+}
+
+@media (min-width: 64em) {
+  .card__information {
+    padding-top: 0;
+    padding-bottom: 1.45rem;
+  }
+}
+
+.card__img {
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.card__name {
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+}
+
+.card__name p {
+  font-weight: normal;
+  color: #9eafc2;
+  margin-top: 5px;
+}
+
+.card__share {
+  width: 1.875rem;
+  height: 1.875rem;
+  padding: 0.5rem;
+  line-height: 1rem;
+  position: absolute;
+  right: 0;
+  background-color: #ecf2f8;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 40em) {
+  .card__share {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+}
+
+.card__share.open {
+  background-color: #9eafc2;
+  color: white;
+}
+
+.card__share.open svg path {
+  fill: white;
+}
+
+.card__share__icons {
+  position: absolute;
+  left: -1.5rem;
+  right: 0;
+  top: 100%;
+  bottom: 0;
+  background-color: #48556a;
+  width: calc(100% + 3rem);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 1.5rem;
+  height: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 64em) {
+  .card__share__icons {
+    top: -15%;
+    left: 17.5rem;
+    width: 60%;
+    height: 0;
+    visibility: hidden;
+    border-radius: 0.625rem;
+    z-index: 1;
+    opacity: 0;
+  }
+}
+
+.card__share__icons.open {
+  visibility: visible;
+  top: 0;
+  height: 100%;
+}
+
+@media (min-width: 64em) {
+  .card__share__icons.open {
+    top: -125%;
+    height: 85%;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.card__share__icons span {
+  color: #6d7f97;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  margin-right: 1.2rem;
+}
+
+.card__share__icons img {
+  margin-right: 1rem;
+}
+
+.card__traingle {
+  position: absolute;
+  top: -10%;
+  right: 0;
+  left: 92.5%;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-top: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.card__traingle.open {
+  visibility: visible;
+  top: 0;
+  height: 100%;
+}
+
+@media (min-width: 64em) {
+  .card__traingle.open {
+    top: -41%;
+    visibility: visible;
+    opacity: 1;
+    border-top: 15px solid #48556a;
+  }
+}
+/*# sourceMappingURL=main.css.map */

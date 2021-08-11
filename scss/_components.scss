@@ -1,0 +1,205 @@
+
+.card {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__body {
+        width: 20.625rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
+
+        @include breakpoint-up(medium) {
+            width: 30rem;
+        }
+
+        @include breakpoint-up(large) {
+            width: 45.5rem;
+            display: flex;
+            overflow: visible;
+            z-index: 0;
+        }
+    }
+
+    &__image {
+        height: 12.5rem;
+        background-image: url("../images/drawers.jpg");
+        background-size: cover;
+        background-position: center center;
+        @include breakpoint-up(large) {
+            flex: 2;
+            height: 17.5rem;
+            border-radius: 0.625rem 0 0 0.625rem;
+        }
+    }
+
+    &__text {
+        background-color: white;
+        padding: 2.5rem 1.5rem 0 1.5rem;
+
+        @include breakpoint-up(large) {
+            flex: 3;
+            border-radius: 0 0.625rem 0.625rem 0;
+        }
+    }
+
+    &__title {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        font-weight: bold;
+        color: $VeryDarkGrayishBlue;
+        margin-bottom: 1.25rem;
+
+        @include breakpoint-up(large){
+            font-size: 1.40rem;
+        }
+    }
+
+    &__description {
+        font-size: 0.90625rem;
+        line-height: 1.25rem;
+        color: $DesaturatedDarkBlue;
+        margin-bottom: 1.5175rem;
+
+    }
+
+    &__information{
+        display: flex;
+        align-items: center;
+        padding: 1.375rem 0;
+        position: relative;
+
+        @include breakpoint-up(large){
+            padding-top: 0;
+            padding-bottom: 1.45rem;
+        }
+    }
+    &__img {
+        //flex: 0.5;
+        width: 40px;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+
+    &__name {
+        //flex: 3;
+        font-weight: bold;
+        letter-spacing: 0.05rem;
+        p {
+            font-weight: normal;
+            color: $GrayishBlue;
+            margin-top: 5px;
+        }
+
+    }
+
+    &__share {
+        //flex: 0.25;
+        width: 1.875rem;
+        height: 1.875rem;
+        padding: 0.5rem;
+        line-height: 1rem;
+        position: absolute;
+        right: 0;
+        background-color: $LightGrayishBlue;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2;
+        transition: all 0.3s ease-in-out;
+
+        @include breakpoint-up(medium) {
+            width: 1.875rem;
+            height: 1.875rem;
+        }
+
+        &.open {
+            svg path {
+                fill: white;
+            }
+            background-color: $GrayishBlue;
+            color: white;
+        }
+    }
+
+    &__share__icons {
+        position: absolute;
+        left: -1.5rem;
+        right: 0;
+        top: 100%;
+        bottom: 0;
+        background-color: $VeryDarkGrayishBlue;
+        width: calc(100% + 3rem);
+        display: flex;
+        align-items: center;
+        padding: 0 1.5rem;
+        height: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+
+        @include breakpoint-up(large){
+            top: -15%;
+            left: 17.5rem;
+            width: 60%;
+            height: 0;
+            visibility: hidden;
+            border-radius: 0.625rem;
+            z-index: 1;
+            opacity: 0;
+        }
+        &.open {
+            visibility: visible;
+            top: 0;
+            height: 100%;
+
+            @include breakpoint-up(large){
+                top: -125%;
+                height: 85%;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        span {
+            color: $DesaturatedDarkBlue;
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            margin-right: 1.2rem;
+        }
+
+        img {
+            margin-right: 1rem;
+        }
+    }
+
+    &__traingle {
+        position: absolute;
+        top: -10%;
+        right: 0;
+        left: 92.5%;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid transparent;
+        border-top: none;
+        transition: all 0.3s ease-in-out;
+        &.open {
+            visibility: visible;
+            top: 0;
+            height: 100%;
+
+            @include breakpoint-up(large){
+                top: -41%;
+                visibility: visible;
+                opacity: 1;
+                border-top: 15px solid $VeryDarkGrayishBlue;
+            }
+        }
+    }
+
+
+}
